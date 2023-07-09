@@ -572,17 +572,9 @@ function fuseBothPoke(){
         [mon2abilities[0], mon2abilities[1]] = [mon2abilities[1], mon2abilities[0]];
     }
 
-    //Type of fused mons
-    var fmonres1 = null;
-    var fmonres2 = null;
-    if(mon1 == mon2 && selfFusionTypeException.includes(mon1)){
-        fmonres1 = selfFusionTypeFix[selfFusionTypeException.indexOf(mon1)];
-        fmonres2 = fmonres1
-    }
-    else{
-        fmonres1 = fusType(mon1types, mon2types);
-        fmonres2 = fusType(mon2types, mon1types);
-    }
+    //Types of fused mons
+    var fmonres1 = fusType(mon1types, mon2types);
+    var fmonres2 = fusType(mon2types, mon1types);
 
     //Types effectiveness
     if (typeComp>0) {
