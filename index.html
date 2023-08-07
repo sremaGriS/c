@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
     <h1>Infinite Fusion Calculator</h1>
     <div id="text">
@@ -20,39 +22,41 @@
             The data used is from the game, but is mostly based on generation 7.
             <br><br>
             <i>
-                <span class="green-text">Custom sprites</span> in <span class="green-text">green</span> are made by artists,<br>
+                <span class="green-text">Custom sprites</span> in <span class="green-text">green</span> are made by
+                artists,<br>
                 from the <a href="https://discord.com/invite/2yynWRvBrB">Infinite Fusion Discord</a>
                 and <a href="https://www.reddit.com/r/PokemonInfiniteFusion/">Reddit</a>.
             </i>
             <br><br>
             <i>
-                <span class="red-text">Generated sprites</span> in <span class="red-text">red</span> are from 
+                <span class="red-text">Generated sprites</span> in <span class="red-text">red</span> are from
                 <a href="https://japeal.com/pkm/">Japeal</a>.<br>
-                They were extracted and <a href="https://github.com/Aegide/autogen-fusion-sprites/commits/master/Battlers">fixed</a>
+                They were extracted and <a
+                    href="https://github.com/Aegide/autogen-fusion-sprites/commits/master/Battlers">fixed</a>
                 by <a href="https://github.com/Aegide">Aegide</a>.
             </i>
         </h4>
         <br>
-		<div class="calculator">
-			<div id="t1" class="inputs">
-				<label for="fname1">First Pokémon:</label>
-				<input list="dlPkmn" type="text" id="fname1" name="fname1" value="" autocomplete="off">
-				<input id="random1" type="button" class="button" value="R1" onclick="randomFirstPoke()">
-			</div>
-			<div id="t2" class="inputs">
-				<label for="fname2">Second Pokémon:</label>
-				<input list="dlPkmn" type="text" id="fname2" name="fname2" value="" autocomplete="off">
-				<input id="random2" type="button" class="button" value="R2" onclick="randomSecondPoke()">
-			</div>
-		
-			<div class="buttons">
-				<input id="random" type="button" class="button" value="Random" onclick="randomBothPoke()">
-				<input id="reset" type="button" class="button" value="Reset" onclick="resetPoke()">
-				<input id="button" type="button" class="button" value="Fuse" onclick="fusePoke()">
-			</div>
-		</div>
-	</div>
-	<br />
+        <div class="calculator">
+            <div id="t1" class="inputs">
+                <label for="fname1">First Pokémon:</label>
+                <input list="dlPkmn" type="text" id="fname1" name="fname1" value="" autocomplete="off">
+                <input id="random1" type="button" class="button" value="R1" onclick="randomFirstPoke()">
+            </div>
+            <div id="t2" class="inputs">
+                <label for="fname2">Second Pokémon:</label>
+                <input list="dlPkmn" type="text" id="fname2" name="fname2" value="" autocomplete="off">
+                <input id="random2" type="button" class="button" value="R2" onclick="randomSecondPoke()">
+            </div>
+
+            <div class="buttons">
+                <input id="random" type="button" class="button" value="Random" onclick="randomBothPoke()">
+                <input id="reset" type="button" class="button" value="Reset" onclick="resetPoke()">
+                <input id="button" type="button" class="button" value="Fuse" onclick="fusePoke()">
+            </div>
+        </div>
+    </div>
+    <br />
     <sector id="stats" class="stats">
         <div id="L2">
             <div>
@@ -111,6 +115,8 @@
     </sector>
     <!--<p id="bottom">All rights reserved to Pokémon</p>-->
 </body>
+
 <script src="infiniteFusionData.js"></script>
 <script src="poke.js"></script>
+
 </html>
