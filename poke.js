@@ -91,14 +91,14 @@ function resetPoke() {
 
     document.getElementById("weak14").innerHTML = "x4: ";
     document.getElementById("weak12").innerHTML = "x2: ";
-    document.getElementById("weak11").innerHTML = "x1: "; 
+    document.getElementById("weak11").innerHTML = "x1: ";
     document.getElementById("weak105").innerHTML = "x0.5: ";
     document.getElementById("weak1025").innerHTML = "x0.25: ";
     document.getElementById("weak100").innerHTML = "x0: ";
 
     document.getElementById("weak24").innerHTML = "x4: ";
     document.getElementById("weak22").innerHTML = "x2: ";
-    document.getElementById("weak21").innerHTML = "x1: "; 
+    document.getElementById("weak21").innerHTML = "x1: ";
     document.getElementById("weak205").innerHTML = "x0.5: ";
     document.getElementById("weak2025").innerHTML = "x0.25: ";
     document.getElementById("weak200").innerHTML = "x0: ";
@@ -313,7 +313,7 @@ function fuseFirstPoke(jsonString){
         mon1abilities = [];
         for (var i = 0; i < ab1.length; i++) {
             mon1abilities.push([ab1[i].ability, ab1[i].is_hidden]);
-        }  
+        }
         //#endregion
 
         //#region Request
@@ -356,7 +356,7 @@ function fuseFirstPoke(jsonString){
             else{
                 alert("PokeAPI is unreachable (2a)");
             }
-            
+
         }
         //#endregion
     }
@@ -364,7 +364,7 @@ function fuseFirstPoke(jsonString){
 
 
 function fuseSecondPoke(jsonString){
-    
+
     //ID selector for sprite showcase of the 2st mon
     num2 = jsonString.id;
     var id2 = num2;
@@ -440,13 +440,13 @@ function fuseSecondPoke(jsonString){
         mon2abilities = [];
         for (var i = 0; i < ab2.length; i++) {
             mon2abilities.push([ab2[i].ability, ab2[i].is_hidden]);
-        }                     
+        }
         //#endregion
 
         fuseBothPoke()
 
     }
-    
+
 }
 
 
@@ -475,7 +475,7 @@ function fuseBothPoke(){
     document.getElementById("dexnumber2").innerHTML = dexnum2;
     document.getElementById("fusionid1").innerHTML = " (" + num1 + "." + num2 + ")";
     document.getElementById("fusionid2").innerHTML = " (" + num2 + "." + num1 + ")";
-    
+
     //Name of fusions
     document.getElementById("FP1").innerHTML = fmon1+ "/" + fmon2;
     document.getElementById("FP2").innerHTML = fmon2 + "/" + fmon1;
@@ -580,7 +580,7 @@ function fuseBothPoke(){
     if (typeComp>0) {
         c = document.getElementsByClassName('monweak');
         for( b=0; b < c.length; b++ )
-        { 
+        {
             defaultValue = c[b].getAttribute('data-default');
             if (defaultValue) {
                 c[b].innerText = defaultValue;
@@ -598,7 +598,7 @@ function fuseBothPoke(){
     for (var i = 0; i < typeName.length; i++) {
         var image = new Image()
         image.src = "types/" + typeName[i] + ".png";
-        
+
         if (result1[i] == 4) {
             document.getElementById("weak14").appendChild(image);
         }
@@ -712,7 +712,7 @@ function typeId(ftype) {
 
 //Custom sprite fusion function
 function showFusion(elementId, fusionId, elementFusionId){
-    
+
     fusionUrl = "https://raw.githubusercontent.com/Aegide/custom-fusion-sprites/main/CustomBattlers/" + fusionId;
     document.getElementById(elementId).title = fusionId;
 
@@ -721,7 +721,7 @@ function showFusion(elementId, fusionId, elementFusionId){
         document.getElementById(elementFusionId).style.color = "green";
     }
     else{//Screenshot of autogen pokemon
-        fallbackFusionRepository = "https://raw.githubusercontent.com/Aegide/autogen-fusion-sprites/master/Battlers/"
+        fallbackFusionRepository = "https://raw.githubusercontent.com/infinitefusion/autogen-fusion-sprites/master/Battlers/"
         headId = fusionId.split(".")[0];
         fallbackFusionUrl = fallbackFusionRepository + headId + "/" + fusionId;
         document.getElementById(elementId).src = fallbackFusionUrl;
@@ -733,13 +733,13 @@ function showFusion(elementId, fusionId, elementFusionId){
 function doesImageExists(imageUrl){
     var http = new XMLHttpRequest();
     http.open('HEAD', imageUrl, false);
-    
+
     // Can't handle error in an easy way
     http.send();
     return http.status != 404;
 }
 
-// Swaps the head with the body and viceversa
+// Swaps the head with the body and vice-versa
 function swapPoke(){
     let auxId = headId;
     let auxFname = document.getElementById("fname1").value;
@@ -764,13 +764,13 @@ function readURLImage(input) {
             reader.onload = function (e) {
                     $('#pic1').attr('src', e.target.result);
                     $('#pic2').attr('src', e.target.result);
-                    document.getElementById("pic2").style.filter 
+                    document.getElementById("pic2").style.filter
                         = "hue-rotate(" + calcShinyHue(headId, bodyId, true, false) + "deg)";
                     $('#pic3').attr('src', e.target.result);
-                    document.getElementById("pic3").style.filter 
+                    document.getElementById("pic3").style.filter
                         = "hue-rotate(" + calcShinyHue(headId, bodyId, false, true) + "deg)";
                     $('#pic4').attr('src', e.target.result);
-                    document.getElementById("pic4").style.filter 
+                    document.getElementById("pic4").style.filter
                         = "hue-rotate(" + calcShinyHue(headId, bodyId, true, true) + "deg)";
                 };
                 reader.readAsDataURL(input.files[0]);
@@ -814,7 +814,7 @@ function showShinies(randomHead, randomBody){
         var name2 = ids[bodyId][0].toLowerCase();
         if (nameFix.includes(name2)) {
             name2 = nameException[nameFix.indexOf(name2)];
-        }    
+        }
         document.getElementById("fname2").value = name2;
     } else {
         var name2 = document.getElementById("fname2").value.toLowerCase();
@@ -836,7 +836,7 @@ function showShinies(randomHead, randomBody){
     picShinySrc = "https://raw.githubusercontent.com/Aegide/custom-fusion-sprites/main/CustomBattlers/" + (headId+1) + "." + (bodyId+1) + ".png";
 
     if (!doesImageExists(picShinySrc)) {
-        picShinySrc = "https://raw.githubusercontent.com/Aegide/autogen-fusion-sprites/master/Battlers/" + (headId+1) + "/" + (headId+1) + "." + (bodyId+1) + ".png";
+        picShinySrc = "https://raw.githubusercontent.com/infinitefusion/autogen-fusion-sprites/master/Battlers/" + (headId+1) + "/" + (headId+1) + "." + (bodyId+1) + ".png";
         document.getElementById("fusionid1").style.color = "red";
     }
 
@@ -903,7 +903,7 @@ function calcShinyHueDeafult(num1, num2, hasShinyHead, hasShinyBody) {
 function fusionAbilities(headAbilities, bodyAbilities) {
     var B0 = bodyAbilities[0][0].name;
     var H1;
-    
+
     //If there is only ability, pick that one
     if(headAbilities.length == 1){
         H1 = headAbilities[0][0].name;
@@ -989,7 +989,7 @@ function fusAb(mon1, mon2) {
     var B0 = mon2[0][0].name;
     if (mon2.length == 3 && mon2[2][1] == true) {
         var B1 = mon2[1][0].name;
-        var BH = mon2[2][0].name;  
+        var BH = mon2[2][0].name;
     }else if (mon2.length == 2 && mon2[1][1] == true) {
         var BH = mon2[1][0].name;
     } else if (mon1.length == 2 && mon1[1][1] == false){
