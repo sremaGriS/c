@@ -721,9 +721,7 @@ function showFusion(elementId, fusionId, elementFusionId){
         document.getElementById(elementFusionId).style.color = "green";
     }
     else{//Screenshot of autogen pokemon
-        fallbackFusionRepository = "https://raw.githubusercontent.com/infinitefusion/autogen-fusion-sprites/master/Battlers/"
-        headId = fusionId.split(".")[0];
-        fallbackFusionUrl = fallbackFusionRepository + headId + "/" + fusionId;
+        fallbackFusionUrl = "https://raw.githubusercontent.com/Aegide/Aegide.github.io/master/default.png";
         document.getElementById(elementId).src = fallbackFusionUrl;
         document.getElementById(elementFusionId).style.color = "red";
     }

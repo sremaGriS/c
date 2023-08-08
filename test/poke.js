@@ -721,7 +721,7 @@ function showFusion(elementId, fusionId, elementFusionId){
         document.getElementById(elementFusionId).style.color = "green";
     }
     else{//Screenshot of autogen pokemon
-        fallbackFusionRepository = "https://raw.githubusercontent.com/Aegide/autogen-fusion-sprites/master/Battlers/"
+        fallbackFusionRepository = "https://raw.githubusercontent.com/infinitefusion/autogen-fusion-sprites/master/Battlers/"
         headId = fusionId.split(".")[0];
         fallbackFusionUrl = fallbackFusionRepository + headId + "/" + fusionId;
         document.getElementById(elementId).src = fallbackFusionUrl;
@@ -836,7 +836,7 @@ function showShinies(randomHead, randomBody){
     picShinySrc = "https://raw.githubusercontent.com/Aegide/custom-fusion-sprites/main/CustomBattlers/" + (headId+1) + "." + (bodyId+1) + ".png";
 
     if (!doesImageExists(picShinySrc)) {
-        picShinySrc = "https://raw.githubusercontent.com/Aegide/autogen-fusion-sprites/master/Battlers/" + (headId+1) + "/" + (headId+1) + "." + (bodyId+1) + ".png";
+        picShinySrc = "https://raw.githubusercontent.com/infinitefusion/autogen-fusion-sprites/master/Battlers/" + (headId+1) + "/" + (headId+1) + "." + (bodyId+1) + ".png";
         document.getElementById("fusionid1").style.color = "red";
     }
 
